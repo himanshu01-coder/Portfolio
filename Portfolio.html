@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himanshu Dwivedi | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#050816;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#6c5ce7;
+    filter:blur(180px);
+    opacity:.25;
+    top:-150px;
+    left:-150px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00d4ff;
+    filter:blur(180px);
+    opacity:.15;
+    right:-150px;
+    bottom:-150px;
+    z-index:-2;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(5,8,22,.75);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#00d4ff;
+}
+
+.nav-links{
+    display:flex;
+    gap:10px;
+    list-style:none;
+}
+
+.nav-links button{
+    border:none;
+    background:transparent;
+    color:#bfc7d5;
+    padding:10px 15px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+    border-radius:8px;
+}
+
+.nav-links button:hover,
+.nav-links button.active{
+    color:white;
+    background:rgba(0,212,255,.12);
+}
+
+main{
+    padding-top:90px;
+    min-height:100vh;
+}
+
+.page{
+    display:none;
+    min-height:calc(100vh - 90px);
+    padding:70px 8%;
+    animation:pageIn .6s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{opacity:0;transform:translateY(25px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* HOME */
+.home-container{
+    min-height:75vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.home-text{
+    max-width:700px;
+}
+
+.small-text{
+    color:#00d4ff;
+    font-size:18px;
+    margin-bottom:12px;
+    letter-spacing:2px;
+}
+
+.home-text h1{
+    font-size:clamp(45px,7vw,85px);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.home-text h1 span{
+    color:transparent;
+    -webkit-text-stroke:1px #00d4ff;
+}
+
+.typing{
+    font-size:25px;
+    color:#c8d0df;
+    min-height:40px;
+}
+
+.description{
+    margin-top:20px;
+    color:#9da7ba;
+    font-size:17px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 23px;
+    border-radius:8px;
+    text-decoration:none;
+    border:1px solid #00d4ff;
+    color:white;
+    background:rgba(0,212,255,.08);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#00d4ff;
+    color:#050816;
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(0,212,255,.35);
+}
+
+.btn.primary{
+    background:#00d4ff;
+    color:#050816;
+    font-weight:700;
+}
+
+.profile{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid #00d4ff;
+    box-shadow:0 0 30px rgba(0,212,255,.3),inset 0 0 30px rgba(108,92,231,.2);
+    animation:floating 4s ease-in-out infinite;
+}
+
+.profile-inner{
+    width:235px;
+    height:235px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#151b35,#0b1025);
+    font-size:70px;
+    font-weight:800;
+    color:#00d4ff;
+}
+
+@keyframes floating{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+/* COMMON */
+.section-title{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.section-title span{
+    color:#00d4ff;
+}
+
+.section-subtitle{
+    color:#8f99ac;
+    margin-bottom:40px;
+}
+
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.glass-card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:18px;
+    padding:30px;
+    backdrop-filter:blur(12px);
+    transition:.3s;
+}
+
+.glass-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,212,255,.45);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.glass-card h3{
+    margin-bottom:12px;
+    color:#00d4ff;
+}
+
+.glass-card p{
+    color:#aeb7c7;
+    line-height:1.7;
+}
+
+.education{
+    margin-top:30px;
+}
+
+.education-item{
+    margin-bottom:25px;
+    padding-left:20px;
+    border-left:2px solid #00d4ff;
+}
+
+.education-item h3{
+    color:white;
+    margin-bottom:5px;
+}
+
+.education-item p{
+    color:#969fb1;
+}
+
+/* SKILLS */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.skill{
+    padding:22px;
+    background:rgba(255,255,255,.04);
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.skill-header span:last-child{
+    color:#00d4ff;
+}
+
+.progress{
+    height:7px;
+    background:#151b2d;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#00d4ff,#6c5ce7);
+    border-radius:10px;
+    transition:width 1.5s ease;
+}
+
+.skill-tags{
+    margin-top:40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.tag{
+    padding:10px 17px;
+    border:1px solid rgba(0,212,255,.3);
+    border-radius:30px;
+    background:rgba(0,212,255,.06);
+    color:#cbd4e3;
+}
+
+/* PROJECTS */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+    padding:30px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:18px;
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    border-color:#00d4ff;
+    box-shadow:0 20px 45px rgba(0,212,255,.12);
+}
+
+.project-number{
+    color:#00d4ff;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.project-card h3{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.project-card p{
+    color:#9da7ba;
+    line-height:1.7;
+}
+
+.project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:20px;
+}
+
+.project-tech span{
+    font-size:13px;
+    padding:7px 11px;
+    border-radius:6px;
+    background:#10172b;
+    color:#00d4ff;
+}
+
+/* RESUME TAB ONLY */
+.resume-tab{
+    padding:45px 5%;
+    background:#eef1f5;
+    color:#1d2733;
+}
+
+.resume-tab .resume-wrapper{
+    max-width:1050px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    border-radius:4px;
+    overflow:hidden;
+}
+
+.resume-tab .resume-header{
+    background:#111827;
+    color:#fff;
+    padding:38px 45px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.resume-tab .resume-header h1{
+    font-size:34px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.resume-tab .resume-header p{
+    color:#00d4ff;
+    font-size:15px;
+}
+
+.resume-tab .resume-header-contact{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    text-align:right;
+    color:#d1d5db;
+    font-size:13px;
+}
+
+.resume-tab .resume-body{
+    display:grid;
+    grid-template-columns:280px 1fr;
+}
+
+.resume-tab .resume-sidebar{
+    background:#1f2937;
+    color:#fff;
+    padding:35px 28px;
+}
+
+.resume-tab .resume-block{
+    margin-bottom:35px;
+}
+
+.resume-tab .resume-block h3{
+    font-size:14px;
+    letter-spacing:2px;
+    color:#00d4ff;
+    border-bottom:1px solid rgba(255,255,255,.15);
+    padding-bottom:10px;
+    margin-bottom:18px;
+}
+
+.resume-tab .resume-block p{
+    color:#d1d5db;
+    font-size:13px;
+    line-height:1.7;
+    margin-bottom:16px;
+}
+
+.resume-tab .resume-skill{
+    margin-bottom:18px;
+}
+
+.resume-tab .resume-skill span{
+    display:block;
+    font-size:13px;
+    margin-bottom:7px;
+    color:#e5e7eb;
+}
+
+.resume-tab .resume-skill > div{
+    height:5px;
+    background:#374151;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.resume-tab .resume-skill i{
+    display:block;
+    height:100%;
+    background:#00d4ff;
+    border-radius:10px;
+}
+
+.resume-tab .resume-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.resume-tab .resume-tags span{
+    font-size:11px;
+    padding:6px 9px;
+    border:1px solid rgba(0,212,255,.4);
+    border-radius:4px;
+    color:#dbeafe;
+}
+
+.resume-tab .resume-content{
+    padding:38px 42px;
+    background:#fff;
+}
+
+.resume-tab .resume-section{
+    margin-bottom:35px;
+}
+
+.resume-tab .resume-section h2{
+    font-size:18px;
+    color:#111827;
+    letter-spacing:2px;
+    border-bottom:2px solid #00d4ff;
+    padding-bottom:8px;
+    margin-bottom:20px;
+}
+
+.resume-tab .resume-section > p{
+    color:#4b5563;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.resume-tab .resume-timeline{
+    position:relative;
+    padding-left:25px;
+    border-left:2px solid #d1d5db;
+}
+
+.resume-tab .resume-timeline-item{
+    position:relative;
+    margin-bottom:28px;
+}
+
+.resume-tab .resume-timeline-item:last-child{
+    margin-bottom:0;
+}
+
+.resume-tab .resume-dot{
+    position:absolute;
+    left:-32px;
+    top:4px;
+    width:12px;
+    height:12px;
+    background:#00d4ff;
+    border-radius:50%;
+    border:3px solid white;
+    box-shadow:0 0 0 2px #00d4ff;
+}
+
+.resume-tab .resume-timeline-item h3{
+    color:#111827;
+    font-size:16px;
+    margin-bottom:4px;
+}
+
+.resume-tab .resume-timeline-item h4{
+    color:#00a9cc;
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+.resume-tab .resume-timeline-item p{
+    color:#6b7280;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.resume-tab .resume-timeline-item strong{
+    display:inline-block;
+    margin-top:6px;
+    color:#111827;
+    font-size:13px;
+}
+
+.resume-tab .resume-project{
+    display:grid;
+    grid-template-columns:45px 1fr;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.resume-tab .resume-project-number{
+    font-size:18px;
+    font-weight:800;
+    color:#00b8d9;
+}
+
+.resume-tab .resume-project h3{
+    color:#111827;
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.resume-tab .resume-project p{
+    color:#6b7280;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.resume-tab .resume-project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:10px;
+}
+
+.resume-tab .resume-project-tech span{
+    padding:5px 9px;
+    background:#eefaff;
+    color:#008eaa;
+    border-radius:4px;
+    font-size:11px;
+}
+
+.resume-tab .resume-skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.resume-tab .resume-skills-grid > div{
+    padding:15px;
+    background:#f8fafc;
+    border-left:3px solid #00d4ff;
+}
+
+.resume-tab .resume-skills-grid strong{
+    display:block;
+    color:#111827;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.resume-tab .resume-skills-grid p{
+    color:#6b7280;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.resume-tab .resume-actions{
+    padding:22px;
+    text-align:center;
+    background:#f8fafc;
+    border-top:1px solid #e5e7eb;
+}
+
+.resume-tab .resume-print-btn{
+    border:none;
+    background:#111827;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
+}
+
+.resume-tab .resume-print-btn:hover{
+    background:#00d4ff;
+    color:#111827;
+    transform:translateY(-2px);
+}
+
+/* CONTACT */
+.contact-container{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-container h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.contact-container p{
+    color:#9da7ba;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-info{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.contact-card{
+    padding:20px 30px;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+}
+
+.contact-card span{
+    color:#00d4ff;
+}
+
+.contact-card a{
+    color:white;
+    text-decoration:none;
+}
+
+.contact-card a:hover{
+    color:#00d4ff;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid rgba(255,255,255,.07);
+    color:#697386;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+    nav{
+        padding:15px 5%;
+    }
+
+    .nav-links{
+        gap:2px;
+        overflow-x:auto;
+    }
+
+    .nav-links button{
+        padding:8px;
+        font-size:12px;
+    }
+
+    .page{
+        padding:50px 5%;
+    }
+
+    .home-container{
+        flex-direction:column-reverse;
+        text-align:center;
+        justify-content:center;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile{
+        width:220px;
+        height:220px;
+    }
+
+    .profile-inner{
+        width:180px;
+        height:180px;
+        font-size:55px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:35px;
+    }
+
+    .resume-tab{
+        padding:30px 3%;
+    }
+
+    .resume-tab .resume-header{
+        padding:28px 25px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .resume-tab .resume-header-contact{
+        text-align:left;
+    }
+
+    .resume-tab .resume-header h1{
+        font-size:27px;
+    }
+
+    .resume-tab .resume-body{
+        grid-template-columns:1fr;
+    }
+
+    .resume-tab .resume-sidebar{
+        padding:28px 25px;
+    }
+
+    .resume-tab .resume-content{
+        padding:30px 25px;
+    }
+
+    .resume-tab .resume-skills-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* PRINT ONLY RESUME */
+@media print{
+    body.printing-resume *{
+        visibility:hidden !important;
+    }
+
+    body.printing-resume #resume,
+    body.printing-resume #resume *{
+        visibility:visible !important;
+    }
+
+    body.printing-resume #resume{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        padding:0;
+        background:white;
+    }
+
+    body.printing-resume .resume-actions{
+        display:none !important;
+    }
+
+    body.printing-resume .resume-wrapper{
+        box-shadow:none;
+        max-width:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">H<span>D</span></div>
+
+    <ul class="nav-links">
+        <li><button class="tab active" data-page="home">Home</button></li>
+        <li><button class="tab" data-page="about">About</button></li>
+        <li><button class="tab" data-page="skills">Skills</button></li>
+        <li><button class="tab" data-page="projects">Projects</button></li>
+        <li><button class="tab" data-page="resume">Resume</button></li>
+        <li><button class="tab" data-page="contact">Contact</button></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+    <div class="home-container">
+
+        <div class="home-text">
+
+            <div class="small-text">HELLO, I'M</div>
+
+            <h1>Himanshu <span>Dwivedi</span></h1>
+
+            <div class="typing">
+                <span id="typingText"></span>
+            </div>
+
+            <p class="description">
+                MCA (Data Science) student at Chandigarh University
+                with a BCA background from Kanpur Institute of Technology.
+                I enjoy building practical applications using Python,
+                Django and data-oriented technologies.
+            </p>
+
+            <div class="buttons">
+                <button class="btn primary" onclick="openTab('projects')">
+                    View My Projects
+                </button>
+
+                <button class="btn" onclick="openTab('resume')">
+                    View Resume
+                </button>
+            </div>
+
+        </div>
+
+        <div class="profile">
+            <div class="profile-inner">HD</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="page">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Education, background and professional interests
+    </p>
+
+    <div class="about-grid">
+
+        <div class="glass-card">
+            <h3>🎓 MCA (Data Science)</h3>
+            <p>
+                Currently pursuing MCA in Data Science from
+                Chandigarh University, Uttar Pradesh.
+            </p>
+        </div>
+
+        <div class="glass-card">
+            <h3>💻 Developer</h3>
+            <p>
+                Interested in Python development, Django web
+                applications, data analysis and problem solving.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+            <h3>MCA (Data Science)</h3>
+            <p>Chandigarh University, Uttar Pradesh</p>
+        </div>
+
+        <div class="education-item">
+            <h3>B.C.A. (Computer Applications)</h3>
+            <p>Kanpur Institute of Technology, Kanpur</p>
+            <p style="color:#00d4ff;margin-top:5px;">
+                CGPA: 8.21
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="page">
+
+    <h2 class="section-title">
+        My <span>Skills</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Technologies and tools I work with
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Python</span>
+                <span>90%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="90%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Django</span>
+                <span>88%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="88%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Advanced Excel</span>
+                <span>85%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>SQL</span>
+                <span>80%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="80%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>Power BI</span>
+                <span>75%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="75%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-header">
+                <span>DSA</span>
+                <span>70%</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" data-width="70%"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="skill-tags">
+        <div class="tag">Python</div>
+        <div class="tag">Django</div>
+        <div class="tag">VLOOKUP</div>
+        <div class="tag">HLOOKUP</div>
+        <div class="tag">XLOOKUP</div>
+        <div class="tag">PivotTable</div>
+        <div class="tag">Advanced Excel</div>
+        <div class="tag">SQL</div>
+        <div class="tag">Power BI</div>
+        <div class="tag">DSA</div>
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="page">
+
+    <h2 class="section-title">
+        My <span>Projects</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Some of the applications and systems I have worked on
+    </p>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>EventHub</h3>
+            <p>
+                A dynamic web-based event management platform
+                designed to simplify event creation, management
+                and participation.
+            </p>
+
+            <div class="project-tech">
+                <span>Python</span>
+                <span>Django</span>
+                <span>HTML</span>
+                <span>CSS</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>ReliefLink</h3>
+            <p>
+                A flood disaster management concept that allows
+                people to request emergency assistance through
+                a web portal or SMS and sends requests into a
+                unified volunteer queue.
+            </p>
+
+            <div class="project-tech">
+                <span>Django</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>Maps</span>
+                <span>SMS</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Data Analysis Dashboard</h3>
+            <p>
+                Data-oriented work using Excel, SQL and
+                visualization tools for organizing, analyzing
+                and presenting information.
+            </p>
+
+            <div class="project-tech">
+                <span>Excel</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- RESUME -->
+<section id="resume" class="page resume-tab">
+
+    <div class="resume-wrapper">
+
+        <div class="resume-header">
+
+            <div>
+                <h1>HIMANSHU DWIVEDI</h1>
+                <p>MCA (Data Science) Student | Python & Django Developer</p>
+            </div>
+
+            <div class="resume-header-contact">
+                <span>📧 himanshudwivedi9071@gmail.com</span>
+                <span>📍 Kanpur, India</span>
+            </div>
+
+        </div>
+
+        <div class="resume-body">
+
+            <aside class="resume-sidebar">
+
+                <div class="resume-block">
+                    <h3>CONTACT</h3>
+
+                    <p>
+                        📧<br>
+                        himanshudwivedi9071@gmail.com
+                    </p>
+
+                    <p>
+                        📍<br>
+                        Kanpur, India
+                    </p>
+                </div>
+
+                <div class="resume-block">
+
+                    <h3>CORE SKILLS</h3>
+
+                    <div class="resume-skill">
+                        <span>Python</span>
+                        <div><i style="width:90%"></i></div>
+                    </div>
+
+                    <div class="resume-skill">
+                        <span>Django</span>
+                        <div><i style="width:88%"></i></div>
+                    </div>
+
+                    <div class="resume-skill">
+                        <span>SQL</span>
+                        <div><i style="width:80%"></i></div>
+                    </div>
+
+                    <div class="resume-skill">
+                        <span>Advanced Excel</span>
+                        <div><i style="width:85%"></i></div>
+                    </div>
+
+                    <div class="resume-skill">
+                        <span>Power BI</span>
+                        <div><i style="width:75%"></i></div>
+                    </div>
+
+                    <div class="resume-skill">
+                        <span>DSA</span>
+                        <div><i style="width:70%"></i></div>
+                    </div>
+
+                </div>
+
+                <div class="resume-block">
+
+                    <h3>TOOLS & TECHNOLOGIES</h3>
+
+                    <div class="resume-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQL</span>
+                        <span>Excel</span>
+                        <span>Power BI</span>
+                        <span>VLOOKUP</span>
+                        <span>HLOOKUP</span>
+                        <span>XLOOKUP</span>
+                        <span>PivotTable</span>
+                        <span>DSA</span>
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <div class="resume-content">
+
+                <section class="resume-section">
+
+                    <h2>PROFILE</h2>
+
+                    <p>
+                        MCA (Data Science) student at Chandigarh University
+                        with a BCA background from Kanpur Institute of Technology.
+                        Interested in Python development, Django web applications,
+                        data analysis, SQL and business intelligence.
+                    </p>
+
+                </section>
+
+
+                <section class="resume-section">
+
+                    <h2>EDUCATION</h2>
+
+                    <div class="resume-timeline">
+
+                        <div class="resume-timeline-item">
+
+                            <div class="resume-dot"></div>
+
+                            <h3>MCA (Data Science)</h3>
+                            <h4>Chandigarh University, Mohali</h4>
+
+                            <p>
+                                Currently pursuing Master of Computer Applications
+                                with specialization in Data Science.
+                            </p>
+
+                        </div>
+
+                        <div class="resume-timeline-item">
+
+                            <div class="resume-dot"></div>
+
+                            <h3>B.C.A. (Computer Applications)</h3>
+                            <h4>Kanpur Institute of Technology, Kanpur</h4>
+
+                            <p> Bachelor of Computer Applications </p>
+
+                            <strong>CGPA: 8.21</strong>
+
+                        </div>
+
+                        <div class="resume-timeline-item">
+
+                            <div class="resume-dot"></div>
+
+                            <h3>Class XII</h3>
+                            <h4>2023</h4>
+
+                            <p>Score: 65%</p>
+
+                        </div>
+
+                        <div class="resume-timeline-item">
+
+                            <div class="resume-dot"></div>
+
+                            <h3>Class X</h3>
+                            <h4>2021</h4>
+
+                            <p>Score: 89%</p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="resume-section">
+
+                    <h2>PROJECTS</h2>
+
+                    <div class="resume-project">
+
+                        <div class="resume-project-number">01</div>
+
+                        <div>
+                            <h3>EventHub</h3>
+
+                            <p>
+                                A dynamic web-based event management platform
+                                designed to simplify event creation, management
+                                and participation.
+                            </p>
+
+                            <div class="resume-project-tech">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="resume-project">
+
+                        <div class="resume-project-number">02</div>
+
+                        <div>
+                            <h3>ReliefLink</h3>
+
+                            <p>
+                                A flood disaster management concept that allows
+                                people to request emergency assistance through
+                                a web portal or SMS and sends requests into a
+                                unified volunteer queue.
+                            </p>
+
+                            <div class="resume-project-tech">
+                                <span>Django</span>
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>Maps</span>
+                                <span>SMS</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="resume-project">
+
+                        <div class="resume-project-number">03</div>
+
+                        <div>
+                            <h3>Data Analysis Dashboard</h3>
+
+                            <p>
+                                Data-oriented work using Excel, SQL and
+                                visualization tools for organizing,
+                                analyzing and presenting information.
+                            </p>
+
+                            <div class="resume-project-tech">
+                                <span>Excel</span>
+                                <span>SQL</span>
+                                <span>Power BI</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="resume-project">
+
+                        <div class="resume-project-number">04</div>
+
+                        <div>
+                            <h3>Python Applications</h3>
+
+                            <p>
+                                Collection of Python-based applications created
+                                while practicing programming, data structures,
+                                automation and problem solving.
+                            </p>
+
+                            <div class="resume-project-tech">
+                                <span>Python</span>
+                                <span>DSA</span>
+                                <span>OOP</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="resume-section">
+
+                    <h2>TECHNICAL SKILLS</h2>
+
+                    <div class="resume-skills-grid">
+
+                        <div>
+                            <strong>Programming</strong>
+                            <p>Python, DSA, OOP</p>
+                        </div>
+
+                        <div>
+                            <strong>Web Development</strong>
+                            <p>Django, HTML, CSS, JavaScript</p>
+                        </div>
+
+                        <div>
+                            <strong>Database</strong>
+                            <p>SQL</p>
+                        </div>
+
+                        <div>
+                            <strong>Data Analytics</strong>
+                            <p>
+                                Advanced Excel, VLOOKUP, HLOOKUP,
+                                XLOOKUP, PivotTable, Power BI
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section class="resume-section">
+
+                    <h2>CAREER OBJECTIVE</h2>
+
+                    <p>
+                        To build a career in software development and data
+                        analytics where I can apply my programming, database
+                        and analytical skills while continuously learning
+                        new technologies and solving real-world problems.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <div class="resume-actions">
+            <button onclick="printResume()" class="resume-print-btn">
+                🖨️ Print / Save as PDF
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+
+    <div class="contact-container">
+
+        <h2>
+            Let's <span style="color:#00d4ff;">Connect</span>
+        </h2>
+
+        <p>
+            Interested in Python development, Django applications,
+            Data Science and analytics. Feel free to connect with me.
+        </p>
+
+        <div class="contact-info">
+
+            <div class="contact-card">
+                📧
+                <span>Email</span>
+                <br>
+                <a href="mailto:himanshudwivedi9071@gmail.com">
+                    himanshudwivedi9071@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-card">
+                📍
+                <span>Location</span>
+                <br>
+                Kanpur, India
+            </div>
+
+        </div>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a
+                class="btn primary"
+                href="mailto:himanshudwivedi9071@gmail.com"
+            >
+                Send Me an Email
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 Himanshu Dwivedi | Python & Django Developer
+</footer>
+
+
+<script>
+
+/* TAB SYSTEM */
+
+const tabs = document.querySelectorAll(".tab");
+const pages = document.querySelectorAll(".page");
+
+function openTab(pageId){
+
+    pages.forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    tabs.forEach(tab=>{
+        tab.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+
+    const selectedTab =
+        document.querySelector(
+            `.tab[data-page="${pageId}"]`
+        );
+
+    if(selectedTab){
+        selectedTab.classList.add("active");
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    if(pageId==="skills"){
+        animateSkills();
+    }
+}
+
+tabs.forEach(tab=>{
+    tab.addEventListener("click",()=>{
+        openTab(tab.dataset.page);
+    });
+});
+
+
+/* TYPING EFFECT */
+
+const typingText =
+    document.getElementById("typingText");
+
+const words=[
+    "Python Developer",
+    "Django Developer",
+    "MCA Data Science Student",
+    "Data Analytics Enthusiast"
+];
+
+let wordIndex=0;
+let charIndex=0;
+let deleting=false;
+
+function typeEffect(){
+
+    const word=words[wordIndex];
+
+    if(!deleting){
+
+        typingText.textContent=
+            word.substring(0,charIndex+1);
+
+        charIndex++;
+
+        if(charIndex===word.length){
+
+            deleting=true;
+
+            setTimeout(typeEffect,1500);
+            return;
+        }
+
+    }else{
+
+        typingText.textContent=
+            word.substring(0,charIndex-1);
+
+        charIndex--;
+
+        if(charIndex===0){
+
+            deleting=false;
+            wordIndex++;
+
+            if(wordIndex>=words.length){
+                wordIndex=0;
+            }
+        }
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 50 : 90
+    );
+}
+
+typeEffect();
+
+
+/* SKILL ANIMATION */
+
+function animateSkills(){
+
+    const bars =
+        document.querySelectorAll(".progress-bar");
+
+    bars.forEach(bar=>{
+
+        const width =
+            bar.getAttribute("data-width");
+
+        bar.style.width="0";
+
+        setTimeout(()=>{
+            bar.style.width=width;
+        },100);
+
+    });
+}
+
+
+/* PRINT ONLY RESUME */
+
+function printResume(){
+
+    document.body.classList.add("printing-resume");
+
+    setTimeout(()=>{
+        window.print();
+    },200);
+}
+
+window.addEventListener("afterprint",()=>{
+    document.body.classList.remove("printing-resume");
+});
+
+</script>
+
+</body>
+</html>
